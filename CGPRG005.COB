@@ -113,7 +113,7 @@
            MOVE  WS-CURSO-IN   TO WS-CUR
            MOVE  WS-NOTA1-IN   TO WS-NT1
            MOVE  WS-NOTA2-IN   TO WS-NT2
-           MOVE  AS-MEDIA      TO WS-MED
+
       *--->   CONDICAO PARA DETERMINAR O SEXO                          *
              IF WS-SEXO-IN  = 'F'
                ADD 1  TO WS-SEXF
@@ -127,6 +127,7 @@
        030-PROCESSAR.
 
            COMPUTE AS-MEDIA = (WS-NOTA1-IN + WS-NOTA2-IN) / 2
+           MOVE  AS-MEDIA      TO WS-MED
       *----> CALCULO DA MEDIA GERAL DOS ALUNOS
            ADD     AS-MEDIA TO AS-MEDG
       *----> CONDICAO PARA ALUNOS ABAIXO DE SEIS
